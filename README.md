@@ -115,4 +115,7 @@ After restart, verify successful domain controller promotion and service functio
 ### Step 8: Organizational Unit Design  
 Proper OU design reflects business structure and enables efficient Group Policy application and administrative delegation.  
 ### OU Structure Design:  
+<img width="800" height="592" alt="Screenshot 2025-09-25 154437" src="https://github.com/user-attachments/assets/c6525aef-539e-43c2-847c-43652a04568e" />  
+
+
 
