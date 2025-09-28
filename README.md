@@ -87,4 +87,32 @@ Active Directory Domain Services (AD DS) provides the foundation for domain auth
 - Group Policy infrastructure  
 - DNS integration  
 - Certificate Services foundation
-- 
+
+### Step 6: Domain Controller Promotion  
+Promoting the server to domain controller creates the forest root domain and initializes the Active Directory database.  
+### Domain Configuration:  
+- Deployment Type: Add a new forest  
+- Root Domain Name: techstart.local  
+- Forest/Domain Functional Level: Windows Server 2016 or higher  
+- Domain Controller Options: DNS Server (checked)  
+- DSRM Password: Strong password for Directory Services Restore Mode  
+<img width="753" height="551" alt="Screenshot 2025-09-25 150529" src="https://github.com/user-attachments/assets/f5c5edec-f03d-49ca-9d64-031e8ecd0c71" />
+
+### Why .local TLD (Top-Level Domain):   
+While not internet-routable, .local provides clear separation between internal and external namespaces in lab environments.  
+
+### Step 7: Post-Promotion Verification  
+After restart, verify successful domain controller promotion and service functionality.  
+<img width="747" height="541" alt="Screenshot 2025-09-25 154052" src="https://github.com/user-attachments/assets/a6690220-12e4-4881-9fcb-e99022e78285" />  
+
+### Verification Checklist:  
+- Login shows TECHSTART\Administrator  
+- DNS service running  
+- Active Directory Domain Services started  
+- Event logs show successful promotion
+
+### Phase 3: Active Directory Organizational Structure  
+### Step 8: Organizational Unit Design  
+Proper OU design reflects business structure and enables efficient Group Policy application and administrative delegation.  
+### OU Structure Design:  
+
