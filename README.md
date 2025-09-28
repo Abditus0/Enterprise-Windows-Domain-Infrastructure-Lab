@@ -384,4 +384,64 @@ This infrastructure directly applies to:
 - Educational Institution computer labs and administration
 
 ### Troubleshooting Guide  
-### Common Issues Encountered  
+
+### Network Connectivity Problems
+Problem: Clients cannot reach domain controller  
+Solution: Verify all VMs use same Internal Network setting  
+
+### DHCP Authorization Failures
+Problem: "Cannot contact Active Directory" errors  
+Solution: Use TECHSTART\Administrator credentials for authorization  
+Root Cause: Local user accounts lack domain privileges  
+
+### Group Policy Not Applying  
+Problem: Desktop policies not visible on clients  
+Solution: Run gpupdate /force and verify GPO linking  
+Check: Event Viewer → Windows Logs → System for policy errors  
+
+### File Share Access Issues  
+Symptom: Users cannot access department folders  
+Solution: Verify both share and NTFS permissions are correctly configured  
+Debug: Use net use command to test UNC path connectivity  
+
+## Future Enhancements  
+### Additional Services Integration  
+- Certificate Services - PKI implementation for enhanced security  
+- Windows Server Update Services - Centralized patch management  
+- Remote Desktop Services - Centralized application delivery  
+- Backup and Recovery - System State and file-level backup solutions
+
+### Advanced Active Directory Features  
+- Multiple Domain Controllers - High availability and load distribution  
+- Site and Services - Multi-location replication management  
+- Fine-Grained Password Policies - Role-based password requirements  
+- Administrative Delegation - Distributed management responsibilities
+
+### Monitoring and Management  
+- System Center Operations Manager - Enterprise monitoring  
+- PowerShell Desired State Configuration - Automated compliance  
+- Event Log Monitoring - Proactive issue detection  
+- Performance Monitoring - Capacity planning and optimization
+
+## Lessons Learned  
+- Planning Phase Critical - Proper network design prevents connectivity issues
+- Security Layering - Multiple permission levels provide defense in depth  
+- Testing Methodology - Systematic verification catches configuration errors early  
+- Documentation Value - Clear processes enable consistent reproduction
+
+### Professional Development  
+- Problem-Solving Skills - Network troubleshooting requires systematic approach  
+- Attention to Detail - Small configuration errors have large impacts  
+- Process Documentation - Clear procedures essential for team environments  
+- Security Mindset - Default configurations often insufficient for business use
+
+### Best Practices Reinforced  
+- Principle of Least Privilege - Grant minimum necessary access rights  
+- Change Management - Document all configuration modifications  
+- Backup Strategy - Regular system state backups prevent data loss  
+- Monitoring Importance - Proactive monitoring prevents service disruptions
+
+## Conclusion  
+This comprehensive Windows domain lab demonstrates practical implementation of enterprise Active Directory infrastructure. The project showcases essential IT administration skills including domain services, network configuration, security implementation, and centralized management capabilities.  
+The hands-on experience gained through building this environment directly translates to real-world IT support, system administration, and infrastructure management roles. The systematic approach to documentation, troubleshooting, and testing reflects professional IT practices valued by employers.  
+Key Takeaway: Modern business environments require robust, secure, and manageable IT infrastructure. This lab provides the foundation for understanding and implementing these critical enterprise services.  
