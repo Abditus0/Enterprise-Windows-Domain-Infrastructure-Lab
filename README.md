@@ -1,6 +1,6 @@
 # Enterprise Windows Domain Infrastructure Lab - Complete Implementation Guide  
 ## Project Overview  
-The project demonstrates the complete implementation of an enterprise Windows domain infrastructure from scratch. Built as a comprehensive learning resource. This lab showcases Active Directory administration, network services configuration, and centralized management capabilities.  
+This project demonstrates the complete implementation of an enterprise Windows domain infrastructure from scratch. It showcases Active Directory administration, network services configuration, and centralized management capabilities through hands-on implementation.  
 
 ## Business Scenario  
 ### TechStart Consulting - A 25-employee IT services company requiring:  
