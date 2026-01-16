@@ -47,17 +47,16 @@ The first step involves creating our primary domain controller which will serve 
 ### VM Configuration:  
 - Name: TechStart-DC01  
 - OS: Windows Server 2022 Standard  
-- RAM: 4GB minimum  
-- Storage: 60GB  
+- RAM: 6GB minimum  
+- Storage: 50GB  
 - Network: Internal Network (VirtualBox)
 ### Step 2: Windows Server 2022 Installation  
 Install Windows Server 2022 Standard with Desktop Experience to provide GUI management capabilities essential for administration and demonstration purposes.  
 ### Critical Installation Choice:  
-- Select "Windows Server 2022 Standard Evaluation (Desktop Experience)"  <img width="602" height="27" alt="Screenshot 2025-09-27 125825" src="https://github.com/user-attachments/assets/89e1762e-e08f-49cb-9fc8-539a227b5568" />  
-- NOT Server Core (command-line only)
+- Select "Windows Server 2022 Standard Evaluation (Desktop Experience)"    <img width="619" height="92" alt="Screenshot 2026-01-16 151928" src="https://github.com/user-attachments/assets/8ccb3575-f87c-493a-8b38-b56d466147e1" />  
 ### Step 3: Initial Server Configuration  
 After installation, Server Manager provides the central hub for all server role and feature management.  
-<img width="1915" height="949" alt="Screenshot 2025-09-25 145421" src="https://github.com/user-attachments/assets/7d831250-8f96-4945-9f98-7a15a1cba904" />  
+<img width="1899" height="769" alt="Screenshot 2026-01-16 152132" src="https://github.com/user-attachments/assets/2c0dee53-3bed-49b2-a211-bd7a3580b587" />  
 ### Key Configuration Steps:  
 - Computer Name: Change from default to TechStart-DC01  
 - Windows Updates: Configure automatic updates (enterprise consideration)  
@@ -69,7 +68,7 @@ Static IP configuration is essential for domain controllers to ensure consistent
 - Default Gateway: 192.168.10.1  
 - Primary DNS: 192.168.10.10 (self-referencing)  
 - Secondary DNS: 8.8.8.8 (external fallback)
-<img width="390" height="445" alt="Screenshot 2025-09-25 150110" src="https://github.com/user-attachments/assets/3916ce4f-0838-4fe9-b792-77d27297ec8f" />
+<img width="397" height="451" alt="Screenshot 2026-01-16 152324" src="https://github.com/user-attachments/assets/8ce005d5-b5bf-4e33-bc47-7cfd0a8c109c" />  
 
 ## Phase 2: Active Directory Domain Services  
 ### Step 5: Installing Active Directory Domain Services Role  
@@ -78,8 +77,8 @@ Active Directory Domain Services (AD DS) provides the foundation for domain auth
 - Server Manager → Add Roles and Features  
 - Select "Active Directory Domain Services"  
 - Include management tools when prompted  
-- Complete installation (requires restart)  
-<img width="778" height="552" alt="Screenshot 2025-09-25 150311" src="https://github.com/user-attachments/assets/c638514f-d14e-47e5-b122-28628ba5b48d" />
+- Complete installation  
+<img width="781" height="547" alt="Screenshot 2026-01-16 152559" src="https://github.com/user-attachments/assets/f9582b84-5697-4144-9ea0-79446cc61acf" />  
 
 ### What AD DS Provides:  
 - Centralized authentication  
@@ -96,14 +95,14 @@ Promoting the server to domain controller creates the forest root domain and ini
 - Forest/Domain Functional Level: Windows Server 2016 or higher  
 - Domain Controller Options: DNS Server (checked)  
 - DSRM Password: Strong password for Directory Services Restore Mode  
-<img width="753" height="551" alt="Screenshot 2025-09-25 150529" src="https://github.com/user-attachments/assets/f5c5edec-f03d-49ca-9d64-031e8ecd0c71" />
 
 ### Why .local TLD (Top-Level Domain):   
 While not internet-routable, .local provides clear separation between internal and external namespaces in lab environments.  
 
 ### Step 7: Post-Promotion Verification  
 After restart, verify successful domain controller promotion and service functionality.  
-<img width="747" height="541" alt="Screenshot 2025-09-25 154052" src="https://github.com/user-attachments/assets/a6690220-12e4-4881-9fcb-e99022e78285" />  
+<img width="748" height="484" alt="Screenshot 2026-01-16 154109" src="https://github.com/user-attachments/assets/eceea78f-4fc7-4ecf-9203-c47300c5a334" />  
+
 
 ### Verification Checklist:  
 - Login shows TECHSTART\Administrator  
@@ -115,14 +114,16 @@ After restart, verify successful domain controller promotion and service functio
 ### Step 8: Organizational Unit Design  
 Proper OU design reflects business structure and enables efficient Group Policy application and administrative delegation.  
 ### OU Structure Design:  
-<img width="800" height="592" alt="Screenshot 2025-09-25 154437" src="https://github.com/user-attachments/assets/c6525aef-539e-43c2-847c-43652a04568e" />  
+<img width="749" height="517" alt="Screenshot 2026-01-16 161843" src="https://github.com/user-attachments/assets/c23e3bd5-ba34-4913-8d8f-5ba8c937fa2b" />  
+
 
 ### Design Principles:  
 - Department-based separation enables targeted Group Policy application  
 - Computer separation allows different policies for workstations vs servers  
 
 ### Step 9: User Account Creation  
-<img width="349" height="104" alt="Screenshot 2025-09-28 115552" src="https://github.com/user-attachments/assets/b4db8d08-8547-4ded-8033-2143337641d1" />  
+<img width="710" height="526" alt="Screenshot 2026-01-16 162757" src="https://github.com/user-attachments/assets/93c503e3-c8f0-4e24-bd4b-cd42fa54326c" />  
+
 
 ### Step 10: Security Group Creation  
 Security groups enable efficient permission management and follow the principle of least privilege.  
@@ -137,7 +138,9 @@ Security groups enable efficient permission management and follow the principle 
 | File_Server_Access     | Security    | Global     | Basic file server access           |
 | Printer_Users          | Security    | Global     | Network printer access             |
 
-<img width="798" height="593" alt="Screenshot 2025-09-25 160436" src="https://github.com/user-attachments/assets/75c9828a-1770-4b84-aca0-9442c5092dd1" />  
+<img width="695" height="523" alt="Screenshot 2026-01-16 161857" src="https://github.com/user-attachments/assets/68673913-dd0a-490b-a06c-13032edde5e2" />  
+
+  
 
 ### Group Strategy:   
 Department-specific groups enable granular access control while File_Server_Access provides baseline connectivity.  
@@ -154,7 +157,7 @@ Proper group membership assignment implements role-based access control (RBAC) p
 ### Step 12: DHCP Server Installation  
 DHCP provides automated IP address management, reducing administrative overhead and ensuring consistent network configuration.  
 
-<img width="778" height="546" alt="Screenshot 2025-09-25 160613" src="https://github.com/user-attachments/assets/c9a3b35e-94d9-4bb4-94f1-49b5106835d2" />  
+<img width="775" height="550" alt="Screenshot 2026-01-16 162855" src="https://github.com/user-attachments/assets/4f29bbf4-4763-4248-bb7a-ad542670af40" />  
 
 ### DHCP Benefits:  
 - Automated IP assignment reduces configuration errors  
@@ -173,19 +176,19 @@ DHCP scopes define IP address ranges and associated network configuration for cl
 <h2>  
   
 <div>
-<img width="287" height="480" alt="Screenshot 2025-09-25 160804" src="https://github.com/user-attachments/assets/a51e05a4-76d7-4f09-94bf-a4f4b1bca9a6" />
+<img width="509" height="424" alt="Screenshot 2026-01-16 163723" src="https://github.com/user-attachments/assets/2d6d32b7-3d09-4cb8-81d0-ee5cc4cc7abe" />  
 </div>
 <div>
-<img width="509" height="414" alt="Screenshot 2025-09-25 160914" src="https://github.com/user-attachments/assets/9def34d4-ec39-45c2-b78e-9ccf80f0733f" />
+<img width="514" height="414" alt="Screenshot 2026-01-16 163749" src="https://github.com/user-attachments/assets/020a9c0e-cfef-4911-8a2f-61ce8fca9065" />  
 </div>
 <div>
-<img width="508" height="410" alt="Screenshot 2025-09-25 161133" src="https://github.com/user-attachments/assets/8c137411-4a8f-4d80-8db3-f11be4289686" />
+<img width="511" height="414" alt="Screenshot 2026-01-16 163845" src="https://github.com/user-attachments/assets/aedc24e4-dad3-44f1-8084-fa6f7f09e46e" />  
 </div>
 <div>
-<img width="507" height="416" alt="Screenshot 2025-09-25 161331" src="https://github.com/user-attachments/assets/e5796b25-782c-4629-82e2-db9753373b8b" />
+<img width="513" height="421" alt="Screenshot 2026-01-16 163924" src="https://github.com/user-attachments/assets/a5c7a9aa-28d7-4e7e-9304-4d1c3006580b" />  
 </div>
 <div>
-<img width="444" height="294" alt="Screenshot 2025-09-25 161617" src="https://github.com/user-attachments/assets/99892912-6d9e-4546-ba55-dff94fa4ad05" />
+<img width="514" height="417" alt="Screenshot 2026-01-16 163901" src="https://github.com/user-attachments/assets/eca175d4-75d2-4786-a763-3e3bf9f9586a" />  
 </div>
 
 ### Scope Design Rationale:  
@@ -197,7 +200,7 @@ DHCP servers must be authorized in Active Directory to prevent rogue DHCP servic
 - Server Manager notification → Complete DHCP Configuration  
 - Use TECHSTART\Administrator credentials  
 - Verify green ticks in DHCP console
-<img width="184" height="367" alt="Screenshot 2025-09-28 122137" src="https://github.com/user-attachments/assets/0eff7a75-d0a8-41a7-923d-aa48f77bfb96" />
+<img width="293" height="262" alt="Screenshot 2026-01-16 171800" src="https://github.com/user-attachments/assets/48463f91-6764-4043-a510-92982f117b5c" />  
 
 ### Security Importance:   
 Authorization prevents unauthorized DHCP servers from assigning incorrect network configurations.  
@@ -207,9 +210,9 @@ Authorization prevents unauthorized DHCP servers from assigning incorrect networ
 ### Step 15: Windows 11 Client Deployment  
 Client workstations represent end-user systems that will authenticate against the domain and utilize centralized services.  
 ### Client VM Configuration:  
-- Names: TechStart-Client01, TechStart-Client02  
+- Names: TechStart-01, TechStart-02  
 - OS: Windows 11 Pro (required for domain join)  
-- RAM: 4GB each  
+- RAM: 6GB each  
 - Network: NAT during installation (internet required), Switch to Internal Network after Windows 11 setup completes
 ### Step 16: Domain Join Process  
 Joining clients to the domain establishes trust relationships and enables centralized authentication and management.  
@@ -218,17 +221,17 @@ Joining clients to the domain establishes trust relationships and enables centra
 - Domain: techstart.local  
 - Credentials: TECHSTART\Administrator  
 - Restart required
-<img width="317" height="382" alt="Screenshot 2025-09-26 113534" src="https://github.com/user-attachments/assets/25dc6c79-abe5-445a-b1a2-f692a1897a69" />
+<img width="727" height="383" alt="Screenshot 2026-01-16 175710" src="https://github.com/user-attachments/assets/602b0480-4263-4a73-85fd-dba175a322e1" />  
 
 ### Post-Join Verification:  
 - Login screen shows "Other user" option  
 - Computer appears in AD Users and Computers  
 - Event logs confirm successful domain join  
-<img width="598" height="426" alt="Screenshot 2025-09-28 124627" src="https://github.com/user-attachments/assets/1ce2ffa0-3f43-4e4e-a0b4-8ff451074da2" />
+<img width="1015" height="764" alt="Screenshot 2026-01-16 180111" src="https://github.com/user-attachments/assets/166813b3-e6de-4bc4-a017-643b99b81f43" />  
 
 ### Step 17: DHCP Lease Verification  
 Confirming DHCP functionality  
-<img width="952" height="376" alt="Screenshot 2025-09-27 112143" src="https://github.com/user-attachments/assets/f671c1ca-5c23-4cb2-81c2-96020bb97dc9" />  
+<img width="693" height="323" alt="Screenshot 2026-01-16 180450" src="https://github.com/user-attachments/assets/4d17fbbd-e75b-4c67-90f6-07d25f208e56" />  
 
 ### Verification Points:  
 - Clients receive IPs in 192.168.10.100-200 range  
@@ -240,8 +243,7 @@ Confirming DHCP functionality
 ### Step 18: File Share Structure Creation  
 Departmental file shares provide centralized storage with appropriate security boundaries reflecting business organizational structure.  
 ### Share Structure:  
-<img width="779" height="251" alt="Screenshot 2025-09-27 114320" src="https://github.com/user-attachments/assets/e1d819a0-b2fb-4c18-91f3-f104e2d84e89" />  
-<img width="780" height="234" alt="Screenshot 2025-09-27 114327" src="https://github.com/user-attachments/assets/4317a068-32db-4241-b55f-c7a202629d6e" />  
+<img width="421" height="267" alt="Screenshot 2026-01-16 181225" src="https://github.com/user-attachments/assets/0077f22d-25b6-4d49-866f-6c93fb75748a" />  
 
 ### Design Principles:  
 - Department separation maintains data confidentiality  
@@ -254,10 +256,10 @@ Share permissions control network access to folders, providing the first layer o
 - Remove "Everyone" group (security best practice)  
 - File_Server_Access group: Full Control (refined by NTFS)  
 - Domain Admins: Full Control (administrative access)
-<img width="352" height="441" alt="Screenshot 2025-09-27 114246" src="https://github.com/user-attachments/assets/ef5a0bae-9d4c-4edf-aa2c-559b8ae3bdd8" />  
+<img width="353" height="441" alt="Screenshot 2026-01-16 182005" src="https://github.com/user-attachments/assets/6e146c9c-722e-408c-8cac-6401d7d7ef6c" />  
 
 - Hidden share ($): Reduces casual browsing, improves security
-<img width="345" height="438" alt="Screenshot 2025-09-27 114650" src="https://github.com/user-attachments/assets/5cb353f6-bdab-4fe0-bc00-45c329d1104a" />  
+<img width="350" height="359" alt="Screenshot 2026-01-16 182012" src="https://github.com/user-attachments/assets/728d95e9-a748-4cb4-979a-1b225f942955" />  
 
 ### Step 20: NTFS Permission Configuration  
 NTFS permissions provide granular access control at the file system level, implementing the principle of least privilege.  
