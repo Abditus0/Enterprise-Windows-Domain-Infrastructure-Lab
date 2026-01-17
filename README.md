@@ -265,10 +265,10 @@ Share permissions control network access to folders, providing the first layer o
 NTFS permissions provide granular access control at the file system level, implementing the principle of least privilege.  
 ### Permission Strategy per Department Folder:  
 - Inheritance disabled for explicit control
-<img width="763" height="509" alt="Screenshot 2025-09-27 114929" src="https://github.com/user-attachments/assets/14a6e2ee-11dd-4b48-b8c4-655ef87daeb4" />  
+<img width="762" height="521" alt="Screenshot 2026-01-17 164203" src="https://github.com/user-attachments/assets/d71eedc4-37aa-425f-8c44-b192888a419e" />  
 
 - Department groups: Full Control to respective folders only
-<img width="759" height="511" alt="Screenshot 2025-09-27 115208" src="https://github.com/user-attachments/assets/15f24896-19d6-4fc3-9ac5-d450403e8657" />  
+<img width="763" height="513" alt="Screenshot 2026-01-17 164416" src="https://github.com/user-attachments/assets/021708d9-65ab-4c12-b2af-ce64c5212ef2" />  
 
 - Domain Admins: Full Control (administrative override)  
 - SYSTEM: Full Control (required for proper function)
@@ -278,13 +278,16 @@ Users can only access their department's data, preventing accidental or intentio
 
 ### Step 21: File Share Access Testing  
 Validating access controls ensures security policies function as designed and users have appropriate access to resources.  
-<img width="515" height="207" alt="Screenshot 2025-09-27 115643" src="https://github.com/user-attachments/assets/e196b14d-8010-40ef-bdcf-d8b8919cdf2f" />  
+<img width="487" height="245" alt="Screenshot 2026-01-17 175909" src="https://github.com/user-attachments/assets/1f129417-64b8-4b7f-8db9-e15ee23ef001" />  
+
+<img width="514" height="187" alt="Screenshot 2026-01-17 180023" src="https://github.com/user-attachments/assets/e76d8356-c9cd-44e2-a623-4c1b5090bc27" />  
+
 
 ## Phase 7: Group Policy Management  
 
 ### Step 22: Group Policy Object Creation  
 Group Policy provides centralized configuration management for domain-joined computers and users, reducing administrative overhead and ensuring consistent configurations.  
-<img width="304" height="428" alt="Screenshot 2025-09-27 115940" src="https://github.com/user-attachments/assets/8a9d2572-438e-4767-bf98-f0de87345835" />  
+<img width="748" height="360" alt="Screenshot 2026-01-17 180409" src="https://github.com/user-attachments/assets/881fdf39-8589-4072-a8c2-1404ad0719df" />  
 GPO Naming Convention: "TechStart Workstation Policy" clearly identifies scope and purpose for future administrators.  
 
 ### Step 23: Policy Configuration  
@@ -292,40 +295,35 @@ Implementing common business policies
 ### Policies Configured:  
 | **Policy**              | **Location**             | **Setting**               | **Business Justification**                                |
 |--------------------------|--------------------------|----------------------------|------------------------------------------------------------|
-| Desktop Wallpaper        | User Configuration       | Company branding           | Professional appearance, brand consistency                 |
-| Control Panel Access     | User Configuration       | Prohibited                 | Prevents user system modifications                         |
-| Password Length          | Computer Configuration   | 8 characters minimum       | Security compliance requirement                            |
+| Desktop Wallpaper        | User Configuration       | Company branding           | Professional appearance, brand consistency                 |                         |
+| Password Length          | Computer Configuration   | 12 characters minimum       | Security compliance requirement                            |
 
-<img width="955" height="433" alt="Screenshot 2025-09-27 120225" src="https://github.com/user-attachments/assets/d0f11430-faf3-4a28-b6fa-9e9a9fa68d85" />  
+<img width="756" height="457" alt="Screenshot 2026-01-17 181039" src="https://github.com/user-attachments/assets/95a899f7-ce2d-4fc3-828e-e3a7b344c0e6" />  
 ### Wallpaper Name: C:\Windows\Web\Wallpaper\Windows\img0.jpg  
-<img width="675" height="627" alt="Screenshot 2025-09-27 120337" src="https://github.com/user-attachments/assets/aef1ac77-3aaf-411c-90a8-f53a2a84b397" />  
-<img width="950" height="511" alt="Screenshot 2025-09-27 120414" src="https://github.com/user-attachments/assets/8de2465b-0495-4263-b132-7cce90c21b28" />  
-<img width="657" height="669" alt="Screenshot 2025-09-27 120535" src="https://github.com/user-attachments/assets/7145be65-48c3-473e-a4c6-539b1f1f4f0a" />  
-<img width="407" height="499" alt="Screenshot 2025-09-27 120551" src="https://github.com/user-attachments/assets/605139b1-0e57-484f-a148-e5a6ee65dc47" />  
+<img width="968" height="500" alt="Screenshot 2026-01-17 181609" src="https://github.com/user-attachments/assets/09362c8d-66cc-4fa3-b353-e3387887e2ba" />  
+ 
 
 ### Step 24: GPO Linking and Application  
 Linking GPOs to domain containers applies policies to all contained objects  
-<img width="442" height="398" alt="Screenshot 2025-09-27 120652" src="https://github.com/user-attachments/assets/a5ef01a8-3d3a-471f-a4f4-cc851ade3ea4" />  
+<img width="752" height="515" alt="Screenshot 2026-01-17 182030" src="https://github.com/user-attachments/assets/78fca136-2f0f-4c24-b33f-b8c0d8200974" />  
 
 ### Linking Strategy:  
 - Domain-level linking applies to all domain computers  
 - Future flexibility allows OU-specific policies as organization grows  
 - Immediate application via gpupdate /force command
-<img width="523" height="262" alt="Screenshot 2025-09-27 120757" src="https://github.com/user-attachments/assets/71fe8cf1-e280-454a-9c5d-ae9ad383ca14" />
+<img width="582" height="267" alt="Screenshot 2026-01-17 182304" src="https://github.com/user-attachments/assets/a8e744be-e610-48c0-acec-4a9a663a811e" />  
 
 ### Step 25: Policy Verification  
 ### Verification Results:  
 - Desktop wallpaper changed to corporate standard  
-- Control Panel access blocked
-<img width="550" height="129" alt="Screenshot 2025-09-27 120850" src="https://github.com/user-attachments/assets/0b21c3be-83cf-45e3-bd69-9441f5fb7171" />
+<img width="1018" height="761" alt="Screenshot 2026-01-17 182603" src="https://github.com/user-attachments/assets/3ea48d32-5924-49d0-a49a-fb1e073c6aa2" />  
 
-- Minimum password lenght set to 8 characters  
+- Minimum password lenght set to 12 characters  
 
 ## Phase 8: Print Services  
 ### Step 26: Print Server Configuration  
 Network printing capabilities provide centralized print management and enable resource sharing across the organization.  
-<img width="771" height="546" alt="Screenshot 2025-09-27 121145" src="https://github.com/user-attachments/assets/1eb5e4d8-71ac-4a4b-81df-4a08217a2cde" />  
-<img width="570" height="431" alt="Screenshot 2025-09-27 121731" src="https://github.com/user-attachments/assets/bc435d6c-f36e-491e-b874-e06b2f567b00" />  
+<img width="779" height="557" alt="Screenshot 2026-01-17 183125" src="https://github.com/user-attachments/assets/63c201f6-dafe-48ff-b16a-0c9e43d2e0b0" />  
 
 
 ### Print Server Benefits:  
