@@ -330,13 +330,13 @@ Network printing capabilities provide centralized print management and enable re
 - Centralized management of printer drivers and settings  
 - User access control through security groups  
 - Print job monitoring and troubleshooting capabilities
-<img width="719" height="267" alt="Screenshot 2025-09-27 122527" src="https://github.com/user-attachments/assets/849c1084-e680-4678-8968-d309bfa68760" />  
+<img width="767" height="520" alt="Screenshot 2026-01-18 160026" src="https://github.com/user-attachments/assets/a512dbdc-a0e5-4543-856c-e8f8b1d5c47f" />  
 
 - Cost control through usage tracking
 
 ### Step 27: Network Printer Deployment  
 Deployment Method: UNC path (\\TechStart-DC01\TechStart-Printer-01) provides direct network printer access.  
-<img width="600" height="441" alt="Screenshot 2025-09-27 122244" src="https://github.com/user-attachments/assets/2a78caca-eda1-4148-ac9b-bef037d8349b" />  
+<img width="560" height="339" alt="Screenshot 2026-01-18 160602" src="https://github.com/user-attachments/assets/81b46d1b-3522-4f5d-a03c-0a29c7d69c6a" />  
 
 ## Phase 9: Final Integration Testing  
 ### Step 28: Multi-User Domain Authentication  
@@ -357,7 +357,7 @@ Final verification confirms all services work together cohesively in an integrat
 - Active Directory: User authentication and authorization working
 
 ## Project Outcomes  
-### Technical Skills Demonstrated  
+### Technical Skills
 - Enterprise Infrastructure Design - Creating scalable, secure domain architecture  
 - Active Directory Administration - User/group management, OU design, delegation  
 - Network Services Management - DNS, DHCP configuration and troubleshooting  
@@ -367,7 +367,7 @@ Final verification confirms all services work together cohesively in an integrat
 - Integration Testing - End-to-end validation, troubleshooting methodology  
 - Documentation - Technical writing, process documentation
 
-### Business Value Delivered  
+### Business Value
 - Centralized Authentication - Single sign-on capability for all users  
 - Automated Network Configuration - Reduced manual IP management overhead  
 - Departmental Data Security - Information access controls matching business structure  
@@ -391,8 +391,8 @@ Solution: Verify all VMs use same Internal Network setting
 
 ### DHCP Authorization Failures
 Problem: "Cannot contact Active Directory" errors  
+Cause: Local user accounts lack domain privileges  
 Solution: Use TECHSTART\Administrator credentials for authorization  
-Root Cause: Local user accounts lack domain privileges  
 
 ### Group Policy Not Applying  
 Problem: Desktop policies not visible on clients  
@@ -404,25 +404,6 @@ Symptom: Users cannot access department folders
 Solution: Verify both share and NTFS permissions are correctly configured  
 Debug: Use net use command to test UNC path connectivity  
 
-## Future Enhancements  
-### Additional Services Integration  
-- Certificate Services - PKI implementation for enhanced security  
-- Windows Server Update Services - Centralized patch management  
-- Remote Desktop Services - Centralized application delivery  
-- Backup and Recovery - System State and file-level backup solutions
-
-### Advanced Active Directory Features  
-- Multiple Domain Controllers - High availability and load distribution  
-- Site and Services - Multi-location replication management  
-- Fine-Grained Password Policies - Role-based password requirements  
-- Administrative Delegation - Distributed management responsibilities
-
-### Monitoring and Management  
-- System Center Operations Manager - Enterprise monitoring  
-- PowerShell Desired State Configuration - Automated compliance  
-- Event Log Monitoring - Proactive issue detection  
-- Performance Monitoring - Capacity planning and optimization
-
 ## Lessons Learned  
 - Planning Phase Critical - Proper network design prevents connectivity issues
 - Security Layering - Multiple permission levels provide defense in depth  
@@ -430,7 +411,7 @@ Debug: Use net use command to test UNC path connectivity
 - Documentation Value - Clear processes enable consistent reproduction
 
 ### Professional Development  
-- Problem-Solving Skills - Network troubleshooting requires systematic approach  
+- Problem Solving Skills - Network troubleshooting requires systematic approach  
 - Attention to Detail - Small configuration errors have large impacts  
 - Process Documentation - Clear procedures essential for team environments  
 - Security Mindset - Default configurations often insufficient for business use
@@ -442,7 +423,7 @@ Debug: Use net use command to test UNC path connectivity
 - Monitoring Importance - Proactive monitoring prevents service disruptions
 
 ## Conclusion  
-This comprehensive Windows domain lab demonstrates practical implementation of enterprise Active Directory infrastructure. The project showcases essential IT administration skills including domain services, network configuration, security implementation, and centralized management capabilities.  
+This Windows domain lab shows practical implementation of enterprise Active Directory infrastructure. The project showcases essential IT administration skills including domain services, network configuration, security implementation, and centralized management capabilities.  
 
 The hands-on experience gained through building this environment directly translates to real-world IT support, system administration, and infrastructure management roles. The systematic approach to documentation, troubleshooting, and testing reflects professional IT practices valued by employers.  
 
