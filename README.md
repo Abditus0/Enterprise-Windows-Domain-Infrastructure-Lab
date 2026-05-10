@@ -103,9 +103,9 @@ Then the department group gets Full Control to its own folder, Domain Admins kee
 
 Result: a Sales user can open the Sales folder but gets denied on the Management folder. Both layers have to grant access, so even if I made a mistake on one of them, the other catches it.
 
-<img width="487" height="245" alt="Access granted to own department" src="https://github.com/user-attachments/assets/1f129417-64b8-4b7f-8db9-e15ee23ef001" />
+<img width="487" height="245" alt="Access granted to own department" src="https://github.com/user-attachments/assets/1f129417-64b8-4b7f-8db9-e15ee23ef001" />  
 
-<img width="514" height="187" alt="Access denied to other department" src="https://github.com/user-attachments/assets/e76d8356-c9cd-44e2-a623-4c1b5090bc27" />
+<img width="514" height="187" alt="Access denied to other department" src="https://github.com/user-attachments/assets/e76d8356-c9cd-44e2-a623-4c1b5090bc27" />  
 
 ## Group Policy
 
