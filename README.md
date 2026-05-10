@@ -87,7 +87,7 @@ The hidden share trick (the `$` at the end) doesn't make a share more secure on 
 
 ### Two layers of permissions
 
-This is the part most people get wrong. Windows has both share permissions and NTFS permissions, and they both apply. The effective permission is the more restrictive of the two. Skip one and you've left a gap.
+This is what most people get wrong. Windows has both share permissions and NTFS permissions, and they both apply. The effective permission is the more restrictive of the two. Skip one and you've left a gap.
 
 **Share permissions** control access over the network. I removed `Everyone` (default and bad) and gave `File_Server_Access` Full Control at the share level.
 
