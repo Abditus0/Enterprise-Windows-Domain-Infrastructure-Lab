@@ -177,6 +177,4 @@ Other things that came out of this:
 
 ## Why I built it
 
-I wanted to know what running an actual Windows domain involves end to end, not just the parts that come up in an interview. Setting up the DC, designing the OUs, getting users into groups, locking down permissions on two layers, pushing policy out from one place, joining real clients and watching it all click together.
-
-Now I've done the whole loop. If a small office handed me their Windows environment tomorrow and asked me to clean it up or rebuild it, I'd know exactly where everything lives and how the pieces fit.
+I wanted to know what running an actual Windows domain involves end to end. Setting up the DC, designing the OUs, getting users into groups, locking down permissions on two layers, pushing policy out from one place, joining real clients and watching it all click together.
