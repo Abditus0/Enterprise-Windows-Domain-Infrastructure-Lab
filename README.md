@@ -95,7 +95,7 @@ This is the part most people get wrong. Windows has both share permissions and N
 
 **NTFS permissions** control access at the file system level. This is where the actual department-by-department lockdown happens. Inheritance gets disabled on each department folder so the permissions don't leak down from the parent.
 
-<img width="762" height="521" alt="NTFS inheritance disabled" src="https://github.com/user-attachments/assets/d71eedc4-37aa-425f-8c44-b922888a419e" />
+<img width="762" height="521" alt="NTFS inheritance disabled" src="https://github.com/user-attachments/assets/d71eedc4-37aa-425f-8c44-b192888a419e" />
 
 Then the department group gets Full Control to its own folder, Domain Admins keep Full Control as a backstop, and SYSTEM keeps Full Control because Windows needs it for the file system to work properly.
 
